@@ -1,0 +1,299 @@
+# Begin File Sample Space.md
+
+Tags: #Mathematics
+
+
+>[!definition|*]
+>A set $\Omega$ with outcomes $s_1,s_2,\ldots,s_n, \; \Omega = \{s_1,s_2,\ldots,s_n\}$ is said to be a sample space if 
+>1. The outcomes are [[Mutually Exclusive]] ($\forall A_{i,j}= 1,2\ldots,n ,\;\; i \neq j$)
+>2. The outcomes are [[Collectively Exhaustive]].
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-07, 16:46
+
+# End File Sample Space.md
+
+
+
+# Begin File Brownian Motion.md
+
+Tags: #Mathematics
+
+
+>[!definition|*]
+>The Wiener process $W_t$ is a special type of [[Levý process]] described as
+>1. $W_0 = 0$
+>2. $W_t$ is [[Almost Surely]] [[continuous]]
+>3. $W_t$ has independent increments
+>4. $W_t - W_s= \mathcal N(0,t-s)$ for $(0\leq s \leq t)$/
+>
+
+
+##### Thoughts:
+- Also known as the [[Wiener process]]
+Date & time created: 2025-04-10, 12:24
+
+# End File Brownian Motion.md
+
+
+
+# Begin File Conditional Probability.md
+
+Tags: #Mathematics #Probability
+
+
+>[!definition|*] 
+>The probability of an [[Event]] occurring given another event has occurred
+>$$P(A|B) = \frac{P(A\cap B)}{P(B)}$$
+>*What is the probability of observing outcome $A$ given that the outcome $B$ has occurred?*
+
+>[!example|*]
+>1. The [[Conditional Expectation]] of rolling an odd value on a die given the value rolled is higher than 3
+>   $P(A\cap B) = \frac{P(\{1,3,5\} \cap \{4,5,6\})}{P(\{(1,2,3,4,5,6\})}=\frac{P(\{5\})}{P(\{1,2,3,4,5,6\})} = \frac{\frac{1}{6}}{\frac{1}{1}} = \frac{1}{6}$
+>   $P(B) =\frac{1}{2}$
+>    $\frac{P(A\cap B)}{P(B)} =\frac{1/6}{1/2} =\frac{1}{3}$
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-06, 14:15
+
+# End File Conditional Probability.md
+
+
+
+# Begin File forecasting.md
+
+Tags: #Mathematics
+
+
+>[!definition|*]
+>Estimate future outcomes from a given [[Sequence]]
+
+>[!example|*]
+>1. [[Extrapolation]]
+
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-10, 12:14
+
+# End File forecasting.md
+
+
+
+# Begin File Mutually Exclusive.md
+
+Tags: #Mathematics #Probability #Statistics 
+
+
+>[!definition|*] 
+>Two events that can not occur at the same time (*disjoint*),
+>$$E_i, E_j\in X, E_i \neq E_j \implies p(E_i \cap E_j) = 0$$
+
+>[!example|*]
+>Flipping a coin and getting the event $H\cap T$ in one flip is not possible.
+
+
+
+##### Thoughts:
+Similar to [[Disjoint Sets]], real difference is that mutual exclusion regards probabilities and disjoint sets regards sets.
+Date & time created: 2025-04-07, 16:50
+
+# End File Mutually Exclusive.md
+
+
+
+# Begin File Probability Axioms.md
+
+Tags: #Mathematics #Probability #Statistics 
+
+
+>[!definition|*]
+>The axioms for a [[Probability Space]] to be valid. Let the triple $(\Omega, \mathcal{F}, P)$ be a [[Measure Space]] s.t. the probability $P(E)$ is the probability for some event $E$, and $P(\Omega) = 1$. Then the triplet is a [[Probability Space]] with 
+>- $\Omega$ as the [[Sample Space]]
+>- $\mathcal F$ as the [[Event Space]]
+>- $P$ as the [[Probability Measure]] 
+
+>[!axiom|*]
+>1. $P(E)\in \mathbb{R}, \; P(E)\geq 0 \;\; \forall A E\in \mathcal{F}$
+>2. $P(\Omega) = 1$
+>3. Any countable sequence of disjoint sets satisfies
+>   $$P\!\left(\bigcup_{i=1}^{\infty} E_i\right) = \sum_{i=1}^{\infty} P(E_i),$$
+>   (assumption on [[Sigma-additivity]])
+
+
+>[!example|*]
+>For a single coin-toss:
+>- $\Omega =\{H,T\}$
+>- $\mathcal{F} = \{H,T, \emptyset, \{H,T\}\}, \; (\{H,T\}=\Omega)$
+>- $P(\emptyset) = 0$
+>- $P(\{H,T\}) = 1$
+>- $P(\{H,T\}^c) = 0$
+
+##### Thoughts:
+- Often denoted as Kolmogorov's axioms as credit.
+Date & time created: 2025-04-06, 14:34
+
+# End File Probability Axioms.md
+
+
+
+# Begin File Extrapolation.md
+
+Tags: #Mathematics
+
+
+>[!definition|*]
+>The forecasting of values **outside** of a [[Sequence]]
+
+>[!example|*]
+>1. Predicting stock values
+
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-10, 12:06
+
+# End File Extrapolation.md
+
+
+
+# Begin File Bayes' Theorem.md
+
+Tags: #Mathematics #Probability #Statistics
+
+
+>[!definition|*]
+> Let $A,B$ be [[Event]]s in an [[Probability Space]]. Then the [[Conditional Probability]] $P(A|B)$ has the *inverted conditional probability*
+>    $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+>[!example|*]
+
+
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-06, 14:09
+
+# End File Bayes' Theorem.md
+
+
+
+# Begin File Collectively Exhaustive.md
+
+Tags: #Mathematics
+
+
+>[!definition|*] 
+>All outcomes are covered by a set, i.e., for all outcomes $s_j, j\in [0,\ldots], s_j \in \Omega$. 
+
+>[!example|*]
+> The set $\Omega = \{H,T\}$ covers all possible outcomes from a coinflip.
+>
+
+
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-07, 16:56
+
+# End File Collectively Exhaustive.md
+
+
+
+# Begin File Interpolation.md
+
+Tags: #Mathematics
+
+
+>[!definition|*]
+>The prediction of missing elements **inside** of a [[Sequence]]
+
+>[!example|*]
+>1. Using a linear interpolant to bridge missing datapoints 
+
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-10, 12:05
+
+# End File Interpolation.md
+
+
+
+# Begin File Disjoint Sets.md
+
+Tags: #Mathematics #SetTheory 
+
+
+>[!definition|*] 
+>Sets who do not share any elements between them, that is, if set $A$ and $B$ are disjoint, then
+>$$A\cap B = \varnothing.$$
+
+>[!example|*]
+>1. The shared sets of even and odd values on a die is $\varnothing$.
+
+
+
+##### Thoughts:
+Similar to [[Mutually Exclusive]], real difference is that mutual exclusion regards probabilities and disjoint sets regards sets.
+Date & time created: 2025-04-07, 17:14
+
+# End File Disjoint Sets.md
+
+
+
+# Begin File Event Space.md
+
+Tags: #Mathematics
+
+
+>[!definition|*] 
+>A collection of subsets of a given [[Sample Space]], considered as events. 
+>This collection is (in statistics) a [[Sigma-Algebra]].
+
+
+>[!example|*]
+>In a die roll getting an even value is a subset of the [[Sample Space]] $\Omega$. 
+
+##### Thoughts:
+
+Date & time created: 2025-04-07, 16:44
+
+# End File Event Space.md
+
+
+
+# Begin File Probability Space.md
+
+Tags: #Mathematics #Probability 
+
+
+>[!definition|*]
+>The probability space is given as the triple $(\Omega, \mathcal{F}, P)$ where
+>- $\Omega$ is a [[Sample Space]]
+>- $\mathcal F$ is an [[Event Space]]
+>- $P$ is a [[Probability Measure]]
+>who all satisfy the given [[Probability Axioms]].
+
+>[!example|*]
+>1. See example in [[Probability Axioms]].
+
+
+
+##### Thoughts:
+
+Date & time created: 2025-04-06, 14:29
+
+# End File Probability Space.md
+
+
+
