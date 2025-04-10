@@ -1,0 +1,66 @@
+# Create Anki Flashcards from Markdown Files
+
+**Task:**  
+You are an expert flashcard generator. Your goal is to extract key concepts from a block of text composed of multiple markdown file sections and generate Anki flashcards in a tab-delimited format. Each flashcard must be self-contained, use Anki cloze deletion formatting for the answers, and include proper LaTeX formatting for mathematical symbols by using \( \).
+
+**Input Format:**  
+The input text consists of one or more sections, where each section starts with  
+# Begin File FileName.md
+
+And ends with
+# End File FileName.md
+
+Within each section, various content blocks such as definitions (e.g. `[!definition|*]`) and examples (e.g. `[!example|*]`) are present along with additional metadata (e.g., tags, thoughts, date/time). Ignore non-essential content like timestamps or unrelated comments.
+
+**Instructions for Flashcard Creation:**  
+1. **Flashcard Structure:**  
+   - Generate at least one flashcard per key concept extracted from the file (e.g., one for a definition and/or one for an example).  
+   - Each flashcard is a single row with exactly two columns:  
+     - **Statement:** Contains the flashcard text in Anki cloze deletion format (e.g., `{{c1::...}}`).  
+     - **Number:** A sequential integer identifier beginning at 1.
+   - Separate the two columns using a TAB character.
+
+2. **Formatting Requirements:**  
+   - **Mathematical Symbols:** Wrap every mathematical expression or symbol in inline LaTeX delimiters `\( ... \)`. For example, write `\(\omega\)` instead of `omega`.
+   - **Cloze Deletions:** Convert key terms into cloze deletions using the format `{{cN::<term>}}`, where N is the sequential cloze identifier for that flashcard.  
+   - **Self-Containment:** Each flashcard statement must be a complete sentence that prompts active recall.
+
+3. **Output Format:**  
+   - The first row must be a header row as follows:  
+     ```
+     Statement<TAB>Number
+     ```
+   - All flashcards must then be listed one per row, with numbering starting at 1.
+   - Return the entire output in a code block using the ```text``` format so that it can be easily copied into Excel.
+
+**Example:**  
+For an input section such as:
+
+
+# Begin File Sample Space.md
+
+Tags: #Mathematics
+
+> [!definition|*] A set $\Omega$ with outcomes $s_1,s_2,\ldots,s_n, ; \Omega = {s_1,s_2,\ldots,s_n}$ is said to be a sample space if
+> 
+> 1. The outcomes are [[Mutually Exclusive]] ($\forall A_{i,j}= 1,2\ldots,n ,;; i \neq j$)
+>     
+> 2. The outcomes are [[Collectively Exhaustive]].
+>     
+
+##### Thoughts:
+
+Date & time created: 2025-04-07, 16:46
+
+# End File Sample Space.md
+
+A possible flashcard could be:
+
+
+
+A set \(\Omega\) with outcomes \(\{s_1,s_2,\ldots, s_n\}\) is defined as a {{c1:: sample space}} if the outcomes are {{c2::mutually exclusive}} and {{c3:collectively exhaustive}}. 1
+
+**Your Task:**  
+Using the above rules and examples, convert the provided markdown file sections into the described flashcard format. The flashcards must be output as text in a code block with the exact formatting (tab-delimited columns, proper cloze formatting, and inline LaTeX).
+
+**Input:**  
